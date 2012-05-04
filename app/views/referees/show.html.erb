@@ -1,0 +1,18 @@
+<h1><%= @referee.name %></h1>
+<address><%= @referee.location %></address>
+<p><%= @referee.crating %> - <%= @referee.lrating %></p>
+
+<%= render '/shared/emails' %>
+<%= render '/shared/phones' %>
+
+<%= form_for [@referee, Email.new] do |email| %>
+  <%= email.text_field :address, :placeholder => "Email" %><%= email.submit %>
+<% end %>
+
+<%= form_for [@referee, Phone.new] do |phone | %>
+  <%= phone.text_field :number, :placeholder => "Phone Number" %>
+  <%= phone.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_referee_path(@referee) %> |
+<%= link_to 'Back', referees_path %>

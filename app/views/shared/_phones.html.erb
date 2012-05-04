@@ -1,0 +1,11 @@
+<h2>Phones</h2>
+<table class="table">
+<% @phones.each do |phone| %>
+  <tr>
+    <td>
+      <%= phone.number %> <%= phone.type %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

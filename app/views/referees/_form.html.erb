@@ -1,0 +1,30 @@
+<%= form_for(@referee) do |f| %>
+  <% if @referee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@referee.errors.count, "error") %> prohibited this referee from being saved:</h2>
+
+      <ul>
+      <% @referee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.text_field :firstname, :placeholder => "First Name" %>
+    <%= f.text_field :lastname, :placeholder => "Last Name" %>
+  </div>
+  <div>
+    <%= f.text_field :city, :placeholder => "City" %>
+    <%= f.text_field :state, :placeholder => "State" %>
+    <%= f.text_field :zip, :placeholder => "Zip" %>
+  </div>
+  <div>
+    <%= f.number_field :crating, :placeholder => "Center Rating" %>
+    <%= f.number_field :lrating, :placeholder => "Line Rating" %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => "btn" %>
+  </div>
+<% end %>

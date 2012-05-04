@@ -1,0 +1,27 @@
+<h1>Listing referees</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Center Rating</th>
+    <th>Line Rating</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @referees.each do |referee| %>
+  <tr>
+    <td><%= link_to referee.name, referee %></td>
+    <td><%= referee.city %> <%= referee.state %> <%= referee.zip %></td>
+    <td><%= referee.crating %></td>
+    <td><%= referee.lrating %></td>
+    <td><%= link_to 'Edit', edit_referee_path(referee) %></td>
+    <td><%= link_to 'Destroy', referee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Referee', new_referee_path %>
