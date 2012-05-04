@@ -1,10 +1,12 @@
 class RefereesController < ApplicationController
 
   before_filter :authenticate_user!
+
   # GET /referees
   # GET /referees.json
   def index
     @referees = Referee.all
+    @title = "Referee List"
 
     respond_to do |format|
       format.html # index.html.erb

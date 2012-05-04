@@ -45,7 +45,7 @@ class PhonesController < ApplicationController
 
     respond_to do |format|
       if @phone.save
-        format.html { redirect_to @phone, :notice => 'Phone was successfully created.' }
+        format.html { redirect_to @referee, :notice => 'Phone was successfully created.' }
         format.json { render :json => @phone, :status => :created, :location => @phone }
       else
         format.html { render :action => "new" }

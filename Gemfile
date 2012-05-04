@@ -9,6 +9,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'json'
 gem 'devise'
+gem 'devise_invitable'
 gem 'cancan'
 
 # Gems used only for assets and not required
