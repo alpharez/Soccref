@@ -1,9 +1,15 @@
-<h1><%= @referee.name %></h1>
-<address><%= @referee.location %></address>
-<p><%= @referee.crating %> - <%= @referee.lrating %></p>
+<div class="row-fluid">
+<div class="span4">
 
-<%= render '/shared/emails' %>
-<%= render '/shared/phones' %>
+<h3>Contact Information</h3>
+<% if @emails.any? %>
+  <%= render '/shared/emails' %>
+<% end %>
+<% if @phones.any? %>
+  <%= render '/shared/phones' %>
+<% end %>
+
+<hr />
 
 <%= form_for [@referee, Email.new] do |email| %>
   <%= email.text_field :address, :placeholder => "Email" %><%= email.submit %>
@@ -16,3 +22,18 @@
 
 <%= link_to 'Edit', edit_referee_path(@referee) %> |
 <%= link_to 'Back', referees_path %>
+</div> <!-- span -->
+<div class="span3 well">
+  <h3><%= link_to @referee.name, @referee %></h3>
+  <h4><%= @referee.location %></h4>
+  <hr />
+  <table>
+    <tr>
+      <th>Center Rating</th><td><%= @referee.crating %></td>
+    </tr>
+    <tr>
+      <th>Line Rating</th><td><%= @referee.lrating %></td>
+    </tr>
+  </table>
+</div> <!-- span -->
+</div> <!-- row -->

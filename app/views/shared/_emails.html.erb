@@ -1,11 +1,6 @@
-<h2>Emails</h2>
-<table class="table">
+<ul class="unstyled">
 <% @emails.each do |email| %>
-  <tr>
-    <td>
-      <%= email.address %>
-    </td>
-  </tr>
+  <li><%= link_to email.address, "mailto:"+email.address %></li>
 <% end %>
-</table>
+</ul>
 
