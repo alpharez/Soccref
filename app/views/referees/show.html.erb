@@ -1,3 +1,9 @@
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %><span class="divider">/</span></li>
+  <li><%= link_to "Referees", referees_path %><span class="divider">/</span></li>
+  <li class="active"><%= link_to @referee.name, @referee %></li>
+</ul>
+
 <div class="row-fluid">
 <div class="span4">
 
@@ -12,7 +18,8 @@
 <hr />
 
 <%= form_for [@referee, Email.new] do |email| %>
-  <%= email.text_field :address, :placeholder => "Email" %><%= email.submit %>
+  <%= email.text_field :address, :placeholder => "Email" %>
+  <%= email.submit %>
 <% end %>
 
 <%= form_for [@referee, Phone.new] do |phone | %>

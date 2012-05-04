@@ -20,6 +20,7 @@ class RefereesController < ApplicationController
     @referee = Referee.find(params[:id])
     @emails = @referee.emails
     @phones = @referee.phones
+    @title = @referee.name
 
     respond_to do |format|
       format.html # show.html.erb
