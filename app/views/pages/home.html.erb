@@ -10,7 +10,7 @@
 </div> <!-- row -->
   <div class="span4 well">
     <table class="table">
-      <tr><th>Refs in the system</th><td><%= @refcount %></td></tr>
+      <tr><th>Refs in the system</th><td><%= link_to @refcount, referees_path %></td></tr>
       <tr><th>Emails sent to refs</th><td>0</td></tr>
       <tr><th>Time saved</th><td>tons</td></tr>
     </table>
