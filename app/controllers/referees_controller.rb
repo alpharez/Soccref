@@ -6,7 +6,7 @@ class RefereesController < ApplicationController
   # GET /referees.json
   def index
     @referees = Referee.all
-    @title = "Referee List"
+    @title = "Referees"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,6 +32,7 @@ class RefereesController < ApplicationController
   # GET /referees/new.json
   def new
     @referee = Referee.new
+    @title = "New Referee"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,6 +43,7 @@ class RefereesController < ApplicationController
   # GET /referees/1/edit
   def edit
     @referee = Referee.find(params[:id])
+    @title = "Edit Referee"
   end
 
   # POST /referees

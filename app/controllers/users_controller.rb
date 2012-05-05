@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @title = "Users"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @title = "New User"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @title = "Edit User"
   end
 
   # POST /users

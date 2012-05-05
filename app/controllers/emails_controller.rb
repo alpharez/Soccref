@@ -1,8 +1,12 @@
 class EmailsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /emails
   # GET /emails.json
   def index
     @emails = Email.all
+    @title = "Emails"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,7 @@ class EmailsController < ApplicationController
   # GET /emails/1.json
   def show
     @email = Email.find(params[:id])
+    @title = @email.address
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +30,7 @@ class EmailsController < ApplicationController
   # GET /emails/new.json
   def new
     @email = Email.new
+    @title = "New Email"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +41,7 @@ class EmailsController < ApplicationController
   # GET /emails/1/edit
   def edit
     @email = Email.find(params[:id])
+    @title = "Edit Email"
   end
 
   # POST /emails

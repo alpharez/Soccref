@@ -4,7 +4,7 @@ class Referee < ActiveRecord::Base
   has_many :referee_assignments
   has_many :users, :through => :referee_assignments
 
-  default_scope :order => 'referees.city'
+  default_scope :order => 'referees.lastname'
 
   def name
     firstname + " " + lastname

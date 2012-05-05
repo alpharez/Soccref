@@ -1,8 +1,12 @@
 class PhonesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /phones
   # GET /phones.json
   def index
     @phones = Phone.all
+    @title = "Phones"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,7 @@ class PhonesController < ApplicationController
   # GET /phones/1.json
   def show
     @phone = Phone.find(params[:id])
+    @title = @phone.number
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +30,7 @@ class PhonesController < ApplicationController
   # GET /phones/new.json
   def new
     @phone = Phone.new
+    @title = "New Phone"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +41,7 @@ class PhonesController < ApplicationController
   # GET /phones/1/edit
   def edit
     @phone = Phone.find(params[:id])
+    @title = "Edit phone"
   end
 
   # POST /phones
