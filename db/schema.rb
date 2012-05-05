@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504165213) do
+ActiveRecord::Schema.define(:version => 20120505004904) do
 
   create_table "emails", :force => true do |t|
     t.string   "address"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20120504165213) do
   create_table "phones", :force => true do |t|
     t.string   "number"
     t.string   "type"
+    t.integer  "referee_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "referee_assignments", :force => true do |t|
+    t.integer  "user_id"
     t.integer  "referee_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

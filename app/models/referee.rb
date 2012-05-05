@@ -1,6 +1,8 @@
 class Referee < ActiveRecord::Base
   has_many :emails
   has_many :phones
+  has_many :referee_assignments
+  has_many :users, :through => :referee_assignments
 
   default_scope :order => 'referees.city'
 

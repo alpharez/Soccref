@@ -1,10 +1,19 @@
 <div class="row-fluid">
-    <div class="hero-unit">
-      <h1>Welcome to Soccref.com!</h1>
-      <h2>Find a referee for your game!</h2>
-      <p>Currently in Beta... invite only.  I am currently <strong>building</strong>.</p>
-      <p>Respect the refs!</p>
+  <div class="span8 hero-unit">
+    <h1>Welcome to Soccref.com!</h1>
+    <h2>Find a referee for your game</h2>
+    <p>Currently in Beta... invite only.  I am currently <strong>building</strong> this site.</p>
+    <p>Respect the refs!</p>
+    <% if !user_signed_in? %>
       <%= link_to raw("Sign In &raquo;"), new_user_session_path, :class => "btn btn-primary btn-large" %>
-    </div> <!-- hero -->
+    <% end %>
+</div> <!-- row -->
+  <div class="span4 well">
+    <table class="table">
+      <tr><th>Refs in the system</th><td><%= @refcount %></td></tr>
+      <tr><th>Emails sent to refs</th><td>0</td></tr>
+      <tr><th>Time saved</th><td>tons</td></tr>
+    </table>
   </div> <!-- row -->
+</div> <!-- hero -->
 
